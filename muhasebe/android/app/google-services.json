@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "382729062294",
+    "project_id": "muhasebeprojesi",
+    "storage_bucket": "muhasebeprojesi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382729062294:android:8f12537ea7f66de818ffb7",
+        "android_client_info": {
+          "package_name": "com.example.muhasebe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382729062294-f4q5aql27d1felfnn52ruqqo0a34tcq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4Sekmj_jmANv4C1hk9XFgogWcIfMZzZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382729062294-f4q5aql27d1felfnn52ruqqo0a34tcq4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
