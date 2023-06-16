@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muhasebe/controller/homescreen_controller.dart';
 import 'package:muhasebe/core/constant/constant.dart';
+import 'package:muhasebe/core/constant/routes.dart';
 import 'package:muhasebe/view/widgets/home/custombuttonappbarhome.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
             floatingActionButton: FloatingActionButton(
               backgroundColor: AppColor.primaryColor,
               onPressed: () {
-                // Get.toNamed(AppRoute.cart);
+                 Get.toNamed(AppRoute.newCustomer);
               },
               child: const Icon(Icons.add),
             ),
