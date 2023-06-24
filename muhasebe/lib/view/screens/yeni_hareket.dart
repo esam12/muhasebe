@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:muhasebe/controller/yenihareket.dart';
 import 'package:muhasebe/view/widgets/yeni_hareket/customtextfield.dart';
 
 class YeniHareket extends StatelessWidget {
@@ -6,6 +8,7 @@ class YeniHareket extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    YeniHareketController controller = Get.put(YeniHareketController());
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -26,7 +29,7 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'hareket turu',
                   labeltext: 'Hareket Turu',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.hareket_turu,
                 ),
                 const SizedBox(
                   height: 20,
@@ -34,7 +37,7 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'musteri adi',
                   labeltext: 'Musteri Adi',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.musteri_adi,
                 ),
                 const SizedBox(
                   height: 20,
@@ -42,7 +45,7 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'urun adi',
                   labeltext: 'Urun Adi',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.urun_adi,
                 ),
                 const SizedBox(
                   height: 20,
@@ -50,7 +53,7 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'urun miktari',
                   labeltext: 'Urun Miktari',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.urun_miktari,
                 ),
                 const SizedBox(
                   height: 20,
@@ -58,7 +61,7 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'urun fiyati',
                   labeltext: 'Urun Fiyati',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.urun_fiyati,
                 ),
                 const SizedBox(
                   height: 20,
@@ -66,7 +69,7 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'hareket aciklamasi',
                   labeltext: 'Hareket Aciklamasi',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.hareket_aciklamasi,
                 ),
                 const SizedBox(
                   height: 20,
@@ -74,7 +77,7 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'hareket tarihi',
                   labeltext: 'Hareket Tarihi',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.hareket_tarihi,
                 ),
                 const SizedBox(
                   height: 20,
@@ -82,33 +85,49 @@ class YeniHareket extends StatelessWidget {
                 CustomTextFieldYeniHareket(
                   hinttext: 'hareket miktari',
                   labeltext: 'Hareket Miktari',
-                  mycontroller: TextEditingController(),
+                  mycontroller: controller.hareket_miktari,
                 ),
-                Row(
-                  children: [
-                    Container(
-                      width: 190,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(color: Colors.blue),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 25.0, top: 15),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          controller.saveData();
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            border: Border.all(color: Colors.blue),
+                          ),
+                          child: const Center(
+                            child: Text("Hareket Ekle"),
+                          ),
+                        ),
                       ),
-                      child: const Center(
-                        child: Text("Hareket Ekle"),
+                      SizedBox(
+                        width: 20,
                       ),
-                    ),
-                    Container(
-                      width: 190,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(color: Colors.blue),
+                      Container(
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          border: Border.all(color: Colors.blue),
+                        ),
+                        child: const Center(
+                          child: Text("Ihracat Hareketi"),
+                        ),
                       ),
-                      child: const Center(
-                        child: Text("Ihracat Hareketi"),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             ),

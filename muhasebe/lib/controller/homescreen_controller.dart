@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muhasebe/view/screens/settings.dart';
+import 'package:muhasebe/view/screens/yeni_hareket.dart';
 
 import '../view/screens/home_page.dart';
 
@@ -16,10 +17,7 @@ class HomeScreenControllerImp extends HomeScreenController {
       mainAxisAlignment: MainAxisAlignment.center,
       children: const [Center(child: Text("Depo"))],
     ),
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: const [Center(child: Text("Hareketler"))],
-    ),
+    const YeniHareket(),
     const Settings()
   ];
 

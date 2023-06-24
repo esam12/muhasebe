@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muhasebe/core/constant/constant.dart';
+import 'package:muhasebe/core/constant/routes.dart';
 
 class Settings extends StatelessWidget {
   const Settings({super.key});
@@ -50,6 +51,7 @@ class Settings extends StatelessWidget {
                   ListTile(
                     onTap: () {
                       // Get.toNamed(AppRoute.archiveOrders);
+                      Get.toNamed(AppRoute.yenihareket);
                     },
                     title: const Text("Arsiv Hareketler"),
                     trailing: const Icon(Icons.arrow_forward_ios),

@@ -5,4 +5,5 @@ class AppRoute {
   static const String depo = "/depo";
   static const String hareket = "/hareket";
   static const String newCustomer = "/newcustomer";
+  static const String yenihareket = "/yenihareket";
 }

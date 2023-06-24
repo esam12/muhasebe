@@ -2,18 +2,17 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:muhasebe/controller/homepage_controller.dart';
 import 'package:muhasebe/core/constant/constant.dart';
 import 'package:muhasebe/view/widgets/home/customeappbar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class DepoHareketler extends StatefulWidget {
+  const DepoHareketler({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<DepoHareketler> createState() => _DepoHareketlerState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DepoHareketlerState extends State<DepoHareketler> {
   Query dbRef = FirebaseDatabase.instance.ref().child('newCustomer');
   DatabaseReference reference =
       FirebaseDatabase.instance.ref().child('newCustomer');
@@ -45,41 +44,41 @@ class _HomePageState extends State<HomePage> {
             "Phone No : ${student['phone']}",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.end,
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     GestureDetector(
-          //       onTap: () {
-          //         //   Navigator.push(context, MaterialPageRoute(builder: (_) => UpdateRecord(studentKey: student['key'])));
-          //       },
-          //       child: Row(
-          //         children: [
-          //           Icon(
-          //             Icons.edit,
-          //             color: AppColor.primaryColor,
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //     const SizedBox(
-          //       width: 6,
-          //     ),
-          //     GestureDetector(
-          //       onTap: () {
-          //         reference.child(student['key']).remove();
-          //       },
-          //       child: Row(
-          //         children: [
-          //           Icon(
-          //             Icons.delete,
-          //             color: Colors.red[700],
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //   ],
-          // )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  //   Navigator.push(context, MaterialPageRoute(builder: (_) => UpdateRecord(studentKey: student['key'])));
+                },
+                child: const Row(
+                  children: [
+                    Icon(
+                      Icons.edit,
+                      color: AppColor.primaryColor,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                width: 6,
+              ),
+              GestureDetector(
+                onTap: () {
+                  reference.child(student['key']).remove();
+                },
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.delete,
+                      color: Colors.red[700],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
@@ -87,7 +86,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomePageControllerImp());
+    // Get.put(DepoHareketlerControllerImp());
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
